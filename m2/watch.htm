@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Youtube Rec+</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<script src="img/script.js"></script>
+    <nav class="top-nav">
+        <div class="left-buttons">
+			<a class="link-text" href="index.htm"><img src="img/logo.png" width="32" height="24" alt="YouTube Logo"></a>
+			<span class="logo-title"><a class="link-text" href="index.htm">YouTube Rec+</a></span>
+            <!--<button>Home</button>-->
+			
+        </div>
+        <div class="search-box">
+			<form style="display: inline" action="search.htm"> <!-- The form causes a newline so set it to inline only here -->
+            <input type="text" placeholder="Search...">
+            <button><i class="fa fa-search"></i></button>
+			</form>
+        </div>
+        <div class="right-buttons">
+			<div class="profile-box">
+				<button class="dropdown-button">&#8942;</button>
+				<div class="dropdown-menu">
+					<ul>
+						<li>Your data in YouTube</li>
+						<li>Appearance: Device Theme</li>
+						<li>Language: English</li>
+						<li>Algorithm: Paused</li>
+						<li><button class="link-navbar" id="openPopup">Profile: Default</button></li>
+						<li>Restricted Mode: Off</li>
+						<li>Location: United States</li>
+						<li>Keyboard Shortcuts</li>
+						<li>Settings</li>
+						<li>Help</li>
+						<li>Send feedback</li>
+					</ul>
+				</div>
+				<form style="display: inline" action="member.htm">
+				<button>Sign in</button>
+				</form>
+			</div>
+        </div>
+    </nav>
+	<div id="popupContainer" class="popup-container">
+		<div class="popup-content">
+			<span class="close-button" id="closePopup">&times;</span>
+			<h2>Create Profile</h2>
+			Name: <input type="text" placeholder="New profile name..."><br><br>
+			Import from: 
+			<input type="radio" id="edu" name="edu" value="30"><label for="edu">Education</label><input type="radio" id="sci" name="sci" value="60"><label for="sci">Science</label><br>
+			<input type="radio" id="new" name="new" value="80"><label for="new">New</label><br>
+			<button id="closePopupBtn">Cancel</button><button id="createProfileBtn">Create Profile</button>
+		</div>
+	</div>
+	
+	<script src="img/script-watch.js"></script>
+	<div class="video-player-page">
+		<div class="video-player">
+			<div class="video-player-frame">
+				<a href="watch.htm"><img class="video-player-contents" src="img/player.png" alt="Video Thumbnail" width="190" height="105"></a>
+				<p class="video-title">Current Video Title</p>
+				<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="48" height="48" alt="">Channel Name <button>Subscribe</button></p>
+				<div id="video-player-description-short">
+					Short description (Generic until search is implemented since clicking on any video leads here) <button id="expand-description" class="link">...more</button>
+				</div>
+				<div id="video-player-description-long">
+					Short description (Generic until search is implemented since clicking on any video leads here)<br>
+					Long version of the video description that can span multiple lines.<br>
+					These descriptions can potentially be very very long.<br>
+					Please comment on this video!
+				</div>
+				<div class="comments-list">
+					<div class="comment-box">
+						<input id="submit-comment-text" type="text" placeholder="Add a comment...">
+						<button id="submit-comment">Post</button>
+					</div>
+					<div id="comment-prefab" style="display:none">
+						<div class="comment-content">
+							<p class="channel-name">
+								<img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">@SomeRandomUser
+							</p>
+							<p>User input goes here...</p>
+						</div>
+					</div>
+					<div class="comment-content">
+						<p class="channel-name">
+							<img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">@SomeRandomUser
+						</p>
+						<p>A user's thoughts on this video...</p>
+					</div>
+				</div>
+			</div>
+			<div class="video-player-recommend">
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+				<div class="search-result">
+					<div class="search-result-thumbnail">
+						<a href="watch.htm"><img class="video-thumbnail" src="img/thumbnail.png" alt="Video Thumbnail" width="190" height="105"></a>
+					</div>
+					<div class="search-result-text">
+						<p class="video-title"><a href="watch.htm">Recommended Video</a></p>
+						<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="24" height="24" alt="">Channel Name</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

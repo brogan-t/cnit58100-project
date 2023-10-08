@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Youtube Rec+</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<script src="img/script.js"></script>
+    <nav class="top-nav">
+        <div class="left-buttons">
+			<a class="link-text" href="index.htm"><img src="img/logo.png" width="32" height="24" alt="YouTube Logo"></a>
+			<span class="logo-title"><a class="link-text" href="index.htm">YouTube Rec+</a></span>
+            <!--<button>Home</button>-->
+			
+        </div>
+        <div class="search-box">
+			<form style="display: inline" action="search.htm"> <!-- The form causes a newline so set it to inline only here -->
+            <input type="text" placeholder="Search...">
+            <button><i class="fa fa-search"></i></button>
+			</form>
+        </div>
+        <div class="right-buttons">
+			<div class="profile-box">
+				<button class="dropdown-button">&#8942;</button>
+				<div class="dropdown-menu">
+					<ul>
+						<li>Your data in YouTube</li>
+						<li>Appearance: Device Theme</li>
+						<li>Language: English</li>
+						<li>Algorithm: Paused</li>
+						<li><button class="link-navbar" id="openPopup">Profile: Default</button></li>
+						<li>Restricted Mode: Off</li>
+						<li>Location: United States</li>
+						<li>Keyboard Shortcuts</li>
+						<li>Settings</li>
+						<li>Help</li>
+						<li>Send feedback</li>
+					</ul>
+				</div>
+				<form style="display: inline" action="member.htm">
+				<button>Education</button>
+				<button class="active">Science</button>
+				</form>
+				<form style="display: inline" action="index.htm">
+				<button>Sign out</button>
+				</form>
+			</div>
+        </div>
+    </nav>
+	<div id="popupContainer" class="popup-container">
+		<div class="popup-content">
+			<span class="close-button" id="closePopup">&times;</span>
+			<h2>Create Profile</h2>
+			Name: <input type="text" placeholder="New profile name..."><br><br>
+			Import from: 
+			<input type="radio" id="edu" name="edu" value="30"><label for="edu">Education</label><input type="radio" id="sci" name="sci" value="60"><label for="sci">Science</label><br>
+			<input type="radio" id="new" name="new" value="80"><label for="new">New</label><br>
+			<button id="closePopupBtn">Cancel</button><button id="createProfileBtn">Create Profile</button>
+		</div>
+	</div>
+
+	<div class="grid-container">
+        <div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_1.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">One Hour Of Mind-Blowing Mysteries Of The Atom | Full Documentary</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">Big Scientific Questions </p>
+			<!-- From https://www.youtube.com/watch?v=ajlUCFZ1Ft8&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+        <div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_2.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Exploring the Euclid Mission with Neil deGrasse Tyson and Jason Rhodes</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">StarTalk</p>
+			<!-- From https://www.youtube.com/watch?v=lJ_Melat9fo&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_3.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">What Happens If You Destroy A Black Hole?</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">Kurzgesagt - In a Nutshell</p>
+			<!-- From https://www.youtube.com/watch?v=cFslUSyfZPc&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_4.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Debunking Monty Hall problem fallacy</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">ScienceDiscoverer</p>
+			<!-- From https://www.youtube.com/watch?v=c9DvZ4mzdCI&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_5.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Scientists Announce a Puzzling Discovery At The Large Hadron Collider</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">The Secrets of the Universe</p>
+			<!-- From https://www.youtube.com/watch?v=cQga9vSTtH4&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_6.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Not all scientific studies are created equal - David H. Schwartz</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">TED-Ed</p>
+			<!-- From https://www.youtube.com/watch?v=GUpd2HJHUt8&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_7.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Bad science: AI used to target kids with disinformation on YouTube - BBC World Service</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">BBC World Service</p>
+			<!-- From https://www.youtube.com/watch?v=ojjn9T_fuUw&pp=ygUHc2NpZW5jZQ%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_8.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Have Scientists Achieved Fusion Technology?: Forbes Breaks Down The Breakthroughs 2023 May Offer</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">Forbes</p>
+			<!-- From https://www.youtube.com/watch?v=m4bmCYJXGQ8&pp=ygUTc2NpZW5jZSBkaXNjb3Zlcmllcw%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_9.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">Amazing Scientific Discoveries Made by Ordinary People</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">SciShow</p>
+			<!-- From https://www.youtube.com/watch?v=b98nQX46f74&pp=ygUTc2NpZW5jZSBkaXNjb3Zlcmllcw%3D%3D -->
+        </div>
+		<div class="grid-item">
+            <a href="watch.htm"><img class="video-thumbnail" src="img/tn_sci_10.png" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="watch.htm">10 Unusual Recent Scientific Discoveries</a></p>
+			<p class="channel-name"><img class="channel-icon" src="img/channel.png" width="32" height="32" alt="">John Michael Godier </p>
+			<!-- From https://www.youtube.com/watch?v=17RwfI0gtnk&pp=ygUTc2NpZW5jZSBkaXNjb3Zlcmllcw%3D%3D -->
+        </div>
+        <!-- Add more grid items as needed -->
+    </div>
+</body>
+</html>
