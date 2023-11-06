@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Youtube Rec+</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'ytrecplus/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'ytrecplus/favicon.ico' %}" >
+</head>
+<body>
+    <script src="{% static 'ytrecplus/script.js' %}"></script>
+    <nav class="top-nav">
+        <div class="left-buttons">
+            <a class="link-text" href="{% url 'index' %}"><img src="{% static 'ytrecplus/img/logo.png' %}" width="32" height="24" alt="YouTube Logo"></a>
+            <span class="logo-title"><a class="link-text" href="{% url 'index' %}">YouTube Rec+</a></span>
+			{% if authenticated %}
+			<form style="display: inline" action="{% url 'upload' %}">
+                    <button>Upload</button>
+            </form>
+			{% endif %}
+        </div>
+        <div class="search-box">
+            <form style="display: inline" action="{% url 'search' %}" method="GET">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="right-buttons">
+            <div class="profile-box">
+                <button class="dropdown-button">&#8942;</button>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li>Your data in YouTube</li>
+                        <li>Appearance: Device Theme</li>
+                        <li>Language: English</li>
+                        <li>Algorithm: Paused</li>
+                        <li><button class="link-navbar" id="openPopup">Profile: {{ profile }}</button></li>
+                        <li>Restricted Mode: Off</li>
+                        <li>Location: United States</li>
+                        <li>Keyboard Shortcuts</li>
+                        <li>Settings</li>
+                        <li>Help</li>
+                        <li>Send feedback</li>
+                    </ul>
+                </div>
+				{% if authenticated %}
+				{% for i in profile_data %}
+				<form method="post" style="display: inline" action="?">
+					{% csrf_token %}
+					<input type="hidden" id="profile" name="profile" value="{{ i.name }}">
+					<button class="{{ i.status }}">{{ i.name }}</button>
+				</form>
+				{% endfor %}
+                <form method="post" style="display: inline" action="{% url 'login' %}">
+					{% csrf_token %}
+					<input type="hidden" id="logout" name="logout" value="logout">
+                    <button>Sign out</button>
+                </form>
+				{% else %}
+				<form style="display: inline" action="{% url 'login' %}">
+                    <button>Sign in</button>
+                </form>
+				{% endif %}
+            </div>
+        </div>
+    </nav>
+    <div id="popupContainer" class="popup-container">
+        <div class="popup-content">
+            <span class="close-button" id="closePopup">&times;</span>
+            <h2>Create Profile</h2>
+            Name: <input type="text" placeholder="New profile name..."><br><br>
+            Import from:
+            <input type="radio" id="edu" name="existing" value="30"><label for="edu">Education</label>
+            <input type="radio" id="sci" name="existing" value="60"><label for="sci">Science</label><br>
+            <input type="radio" id="new" name="existing" value="80" checked="checked"><label for="new">New</label><br>
+            <button id="closePopupBtn">Cancel</button><button id="createProfileBtn">Create Profile (M4)</button>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        {% for i in video_data %}
+        <div class="grid-item">
+            <a href="{% url 'watch' param=i.video_url %}"><img class="video-thumbnail" src="{% static 'ytrecplus/img/thumbnail/'|add:i.thumbnail_url|add:'.png' %}" alt="Video Thumbnail"></a>
+            <p class="video-title"><a href="{% url 'watch' param=i.video_url %}">{{ i.video_title }}</a></p>
+            <p class="channel-name"><img class="channel-icon" src="{% static 'ytrecplus/img/channel.png' %}" width="32" height="32" alt="">{{ i.channel_name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
